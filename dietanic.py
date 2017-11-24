@@ -98,8 +98,5 @@ predictions = rfc.predict(testInputs)
 predicted = pd.Series(predictions)
 test = test.assign(Survived = predicted)
 
-print(test.head(10))
-print(test.describe())
-
 testHeader = ["PassengerId", "Survived"]
 test.to_csv('predictions.csv', columns=testHeader, index=False)
